@@ -1,6 +1,8 @@
-const btn1 = document.querySelector("#btn-1");
-const btn2 = document.querySelector("#btn-2");
-const btn3 = document.querySelector("#btn-3");
+const score = {
+  wins: 0,
+  losses: 0,
+  ties: 0,
+};
 
 //? Pick computer move
 
@@ -23,7 +25,7 @@ function pickcomputerMove() {
 function playGame(playerMove) {
   const compMove = pickcomputerMove();
   let result = "";
-
+  
   if (playerMove === "rock") {
     if (compMove === "rock") {
       result = "tie";
@@ -38,7 +40,7 @@ function playGame(playerMove) {
     if (compMove === "rock") {
       result = "You Win";
     } else if (compMove === "paper") {
-      result = "Tie";
+      result = "tie";
     } else if (compMove === "scissor") {
       result = "You lose";
     }
@@ -48,13 +50,26 @@ function playGame(playerMove) {
     if (compMove === "rock") {
       result = "You lose";
     } else if (compMove === "paper") {
-      result = "You win";
+      result = "You Win";
     } else if (compMove === "scissor") {
-      result = "You tie";
+      result = "tie";
     }
   }
+  
+  //? update score:
 
-  alert(`You picked ${playerMove}. Computer picked ${compMove}. ${result} `);
+  if (result === "You Win") {
+    score.wins += 1;
+  }
+   else if (result === "You lose") {
+     score.losses += 1;
+    } 
+  else if (result === "tie") {
+    score.ties += 1;
+  }
+
+  alert(` You picked ${playerMove}. Computer picked ${compMove}. ${result} 
+  Wins : ${score.wins} , losses : ${score.losses} , ties : ${score.ties}`);
 }
 
 //? "function Rock"
@@ -74,3 +89,11 @@ function paper() {
 function scissor() {
   playGame("scissor");
 }
+
+  //? function reset:
+  
+  function reset(){
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+  }
