@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  font-size: 40px;
+  margin-top: 7%;
+  text-align: center;
+}
+#btn {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 5%;
+}
+
+#btn-1 {
+  font-size: 40px;
+  padding: 10px;
+  border-radius: 35px;
+}
+#btn-2 {
+  font-size: 40px;
+  padding: 10px;
+  border-radius: 35px;
+}
+#btn-3 {
+  font-size: 40px;
+  padding: 10px;
+  border-radius: 35px;
+}
